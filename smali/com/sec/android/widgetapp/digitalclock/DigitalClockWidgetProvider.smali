@@ -13,71 +13,148 @@
     return-void
 .end method
 
-.method private static drawClock(Landroid/content/Context;Landroid/widget/RemoteViews;Ljava/util/Date;)V
-    .locals 6
+.method private static drawClock(Landroid/content/Context;Landroid/widget/RemoteViews;)V
+    .locals 8
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "views"    # Landroid/widget/RemoteViews;
-    .param p2, "date"    # Ljava/util/Date;
     
     .prologue
-    # Получаем часы и минуты
-    invoke-virtual {p2}, Ljava/util/Date;->getHours()I
-    move-result v1
-    invoke-virtual {p2}, Ljava/util/Date;->getMinutes()I
+    # Получаем текущее время правильным способом
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    move-result-object v0
+    
+    # Получаем часы (24-часовой формат)
+    const/16 v1, 0xb
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
     move-result v2
     
-    # Создаем StringBuilder для времени
-    new-instance v0, Ljava/lang/StringBuilder;
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    # Получаем минуты
+    const/16 v1, 0xc
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+    move-result v3
     
-    # Добавляем часы (с ведущим нулем)
-    const/16 v3, 0xa
-    if-ge v1, v3, :hour_ok
-    const-string v4, "0"
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    # Создаем строку времени с форматированием
+    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    
+    # Добавляем часы с ведущим нулем
+    const/16 v5, 0xa
+    if-ge v2, v5, :hour_ok
+    const-string v6, "0"
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :hour_ok
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
     
     # Добавляем двоеточие
-    const-string v4, ":"
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v6, ":"
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     
-    # Добавляем минуты (с ведущим нулем)
-    if-ge v2, v3, :min_ok
-    const-string v4, "0"
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    # Добавляем минуты с ведущим нулем
+    if-ge v3, v5, :min_ok
+    const-string v6, "0"
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
     :min_ok
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
     
-    # Устанавливаем время в TextView (используем ID clock_hour01)
-    const v3, 0x7f070002  # Попробуй разные ID: 0x7f070001, 0x7f070002, 0x7f070003
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v5
-    invoke-virtual {p1, v3, v5}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+    # Устанавливаем время в главный TextView
+    const v5, 0x7f070002
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v6
+    invoke-virtual {p1, v5, v6}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+    
+    # Обновляем день недели
+    invoke-static {p0, p1, v0}, Lcom/sec/android/widgetapp/digitalclock/DigitalClockWidgetProvider;->updateDayAndDate(Landroid/content/Context;Landroid/widget/RemoteViews;Ljava/util/Calendar;)V
     
     return-void
 .end method
 
-.method private static hideElements(Landroid/widget/RemoteViews;)V
-    .locals 2
-    .param p0, "views"    # Landroid/widget/RemoteViews;
+.method private static updateDayAndDate(Landroid/content/Context;Landroid/widget/RemoteViews;Ljava/util/Calendar;)V
+    .locals 9
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "views"    # Landroid/widget/RemoteViews;
+    .param p2, "calendar"    # Ljava/util/Calendar;
     
     .prologue
-    const/4 v1, 0x4  # INVISIBLE
+    # Получаем день недели (1=Воскресенье, 2=Понедельник, ...)
+    const/4 v0, 0x7
+    invoke-virtual {p2, v0}, Ljava/util/Calendar;->get(I)I
+    move-result v1
     
-    # Скрываем AM/PM
-    const v0, 0x7f070007
-    invoke-virtual {p0, v0, v1}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    # Получаем месяц и день
+    const/4 v0, 0x2
+    invoke-virtual {p2, v0}, Ljava/util/Calendar;->get(I)I
+    move-result v2
+    add-int/lit8 v2, v2, 0x1
     
-    # Скрываем дату
-    const v0, 0x7f07000b
-    invoke-virtual {p0, v0, v1}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    const/4 v0, 0x5
+    invoke-virtual {p2, v0}, Ljava/util/Calendar;->get(I)I
+    move-result v3
+    
+    # Массив дней недели (краткие названия)
+    const/4 v0, 0x7
+    new-array v4, v0, [Ljava/lang/String;
+    const/4 v0, 0x0
+    const-string v5, "Вс"
+    aput-object v5, v4, v0
+    const/4 v0, 0x1
+    const-string v5, "Пн"
+    aput-object v5, v4, v0
+    const/4 v0, 0x2
+    const-string v5, "Вт"
+    aput-object v5, v4, v0
+    const/4 v0, 0x3
+    const-string v5, "Ср"
+    aput-object v5, v4, v0
+    const/4 v0, 0x4
+    const-string v5, "Чт"
+    aput-object v5, v4, v0
+    const/4 v0, 0x5
+    const-string v5, "Пт"
+    aput-object v5, v4, v0
+    const/4 v0, 0x6
+    const-string v5, "Сб"
+    aput-object v5, v4, v0
+    
+    # Устанавливаем день недели
+    const v0, 0x7f07000e
+    add-int/lit8 v5, v1, -0x1
+    aget-object v6, v4, v5
+    invoke-virtual {p1, v0, v6}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+    
+    # Создаем строку даты MM/DD
+    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    
+    # Добавляем месяц с ведущим нулем
+    const/16 v8, 0xa
+    if-ge v2, v8, :month_ok
+    const-string v6, "0"
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :month_ok
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    
+    # Добавляем слэш
+    const-string v6, "/"
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    
+    # Добавляем день с ведущим нулем
+    if-ge v3, v8, :day_ok
+    const-string v6, "0"
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :day_ok
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    
+    # Устанавливаем дату
+    const v0, 0x7f070015
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v6
+    invoke-virtual {p1, v0, v6}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
     
     return-void
 .end method
 
 .method private static updateViews(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;[I)V
-    .locals 6
+    .locals 4
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "aw"    # Landroid/appwidget/AppWidgetManager;
     .param p2, "widgetIds"    # [I
@@ -86,44 +163,37 @@
     # Создаем RemoteViews
     new-instance v3, Landroid/widget/RemoteViews;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-    move-result-object v4
-    const/high16 v5, 0x7f030000
-    invoke-direct {v3, v4, v5}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
+    move-result-object v0
+    const/high16 v1, 0x7f030000
+    invoke-direct {v3, v0, v1}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
     
-    # Текущее время
-    new-instance v0, Ljava/util/Date;
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-    move-result-wide v4
-    invoke-direct {v0, v4, v5}, Ljava/util/Date;-><init>(J)V
+    # Обновляем часы и дату
+    invoke-static {p0, v3}, Lcom/sec/android/widgetapp/digitalclock/DigitalClockWidgetProvider;->drawClock(Landroid/content/Context;Landroid/widget/RemoteViews;)V
     
-    # Скрываем ненужные элементы
-    invoke-static {v3}, Lcom/sec/android/widgetapp/digitalclock/DigitalClockWidgetProvider;->hideElements(Landroid/widget/RemoteViews;)V
-    
-    # Рисуем часы
-    invoke-static {p0, v3, v0}, Lcom/sec/android/widgetapp/digitalclock/DigitalClockWidgetProvider;->drawClock(Landroid/content/Context;Landroid/widget/RemoteViews;Ljava/util/Date;)V
-    
-    # Обновляем виджет
+    # Обновляем все виджеты
     invoke-static {p1, p2, v3}, Lcom/sec/android/widgetapp/digitalclock/DigitalClockWidgetProvider;->updateWidget(Landroid/appwidget/AppWidgetManager;[ILandroid/widget/RemoteViews;)V
     
     return-void
 .end method
 
 .method private static updateWidget(Landroid/appwidget/AppWidgetManager;[ILandroid/widget/RemoteViews;)V
-    .locals 2
+    .locals 3
     .param p0, "aw"    # Landroid/appwidget/AppWidgetManager;
     .param p1, "widgetIds"    # [I
     .param p2, "views"    # Landroid/widget/RemoteViews;
     
     .prologue
     if-eqz p0, :end
-    if-nez p1, :end
+    if-nez p1, :loop_start
+    goto :end
     
+    :loop_start
     const/4 v0, 0x0
     :loop
     array-length v1, p1
     if-ge v0, v1, :end
-    aget v1, p1, v0
-    invoke-virtual {p0, v1, p2}, Landroid/appwidget/AppWidgetManager;->updateAppWidget(ILandroid/widget/RemoteViews;)V
+    aget v2, p1, v0
+    invoke-virtual {p0, v2, p2}, Landroid/appwidget/AppWidgetManager;->updateAppWidget(ILandroid/widget/RemoteViews;)V
     add-int/lit8 v0, v0, 0x1
     goto :loop
     
