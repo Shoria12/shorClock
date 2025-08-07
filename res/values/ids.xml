@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="bg_layout" />
+    <item type="id" name="clock_layout" />
+    <item type="id" name="clock_hour01" />
+    <item type="id" name="clock_hour02" />
+    <item type="id" name="clock_colon" />
+    <item type="id" name="clock_minute01" />
+    <item type="id" name="clock_minute02" />
+    <item type="id" name="ampm_layout" />
+    <item type="id" name="ampm_image" />
+    <item type="id" name="ampm_text" />
+    <item type="id" name="ampm_text_ko" />
+    <item type="id" name="right_layout" />
+    <item type="id" name="day_image" />
+    <item type="id" name="day_text_large" />
+    <item type="id" name="day_text" />
+    <item type="id" name="day_text_ko" />
+    <item type="id" name="line" />
+    <item type="id" name="date_month01" />
+    <item type="id" name="date_month02" />
+    <item type="id" name="date_slash" />
+    <item type="id" name="date_date01" />
+    <item type="id" name="date_date02" />
+</resources>

@@ -1,0 +1,222 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: res/drawable-normal-land-hdpi/week_sun.png
+SHA1-Digest: eRzpIz/L/Ei+J+CZVh9UMWy6Bv4=
+
+Name: res/drawable-normal-hdpi/pm.png
+SHA1-Digest: 25EwkyJbOKrXtVmmOVmrAeXQj/I=
+
+Name: res/drawable-normal-land-hdpi/number_a_07.png
+SHA1-Digest: h2LO5GrE+GZ+B4JoPNLR2ipfB7k=
+
+Name: res/drawable-normal-hdpi/number_a2_01.png
+SHA1-Digest: /mhjepil8Y/cUnNcBUcgFQBTYH4=
+
+Name: res/drawable-normal-land-hdpi/number_a2_05.png
+SHA1-Digest: LRzpVSLFN3CgISfr0/8TccP3bfQ=
+
+Name: res/drawable-normal-hdpi/number_a_08.png
+SHA1-Digest: nLHbnqo2Hymd7Kmayt/yIZV0hsc=
+
+Name: res/drawable-normal-hdpi/week_mon.png
+SHA1-Digest: 9e0Z7Cb7JLUsoGMu0hEDZOXyHJo=
+
+Name: res/drawable-normal-land-hdpi/number_a_00.png
+SHA1-Digest: Cdrx35tm+4kmtcKUUvonL2TKFwc=
+
+Name: res/drawable-normal-land-hdpi/preview.png
+SHA1-Digest: JRw6vH3UMSXUMiGszCrlgM9wDb8=
+
+Name: res/drawable-normal-land-hdpi/number_a2_04.png
+SHA1-Digest: xNIpXi/0pAk7q2RTAkKniZwNt28=
+
+Name: res/drawable-normal-land-hdpi/week_sat.png
+SHA1-Digest: PWzHjZqoY61jQGGnzsmWwhy+vmI=
+
+Name: res/drawable-normal-land-hdpi/number_a_03.png
+SHA1-Digest: 6ae2Tj++LzSBfG/aU2/ix0qIY8U=
+
+Name: res/drawable-normal-hdpi/week_wed.png
+SHA1-Digest: IYe+OcURLglZoGQo1v9hJknx9RU=
+
+Name: res/drawable-normal-land-hdpi/week_thur.png
+SHA1-Digest: Pm096F1pZIfLOAAmm4XWuf+dajY=
+
+Name: res/drawable-normal-hdpi/number_a_09.png
+SHA1-Digest: qdYGqSqKOxdXXTgXomAxh1vyaHY=
+
+Name: res/drawable-normal-land-hdpi/number_a2_07.png
+SHA1-Digest: kIL2kaPWOb8CFA+OfQPdQFtaunY=
+
+Name: res/xml/digitalclock_appwidget_info.xml
+SHA1-Digest: PtEDP8uuPELvgpKyTj+2suVNE3U=
+
+Name: res/drawable-normal-hdpi/preview.png
+SHA1-Digest: JRw6vH3UMSXUMiGszCrlgM9wDb8=
+
+Name: res/drawable-normal-land-hdpi/number_a2_00.png
+SHA1-Digest: ndgA0mUyLFF2m899+auoVr3zmoE=
+
+Name: res/drawable-normal-hdpi/number_a2_10.png
+SHA1-Digest: a93AzhOvt7aTtcFeVWmZ1Sst24g=
+
+Name: res/drawable-normal-land-hdpi/pm.png
+SHA1-Digest: itFY9mAtNHXtaWEY56SauGtFDdU=
+
+Name: res/drawable-normal-land-hdpi/number_a_06.png
+SHA1-Digest: fFKhYYiRzPkr0ymmTlf5Lwc3qw0=
+
+Name: res/drawable-normal-land-hdpi/number_a2_02.png
+SHA1-Digest: 8axjmBVbiQ4MdGdXblt014p8GtM=
+
+Name: res/drawable-normal-hdpi/number_a2_00.png
+SHA1-Digest: ndgA0mUyLFF2m899+auoVr3zmoE=
+
+Name: res/drawable-normal-hdpi/week_fri.png
+SHA1-Digest: gAjle7ROhkzyyFv1F51+QQjStQQ=
+
+Name: res/drawable-normal-land-hdpi/number_a2_01.png
+SHA1-Digest: /mhjepil8Y/cUnNcBUcgFQBTYH4=
+
+Name: res/drawable-normal-land-hdpi/number_a2_06.png
+SHA1-Digest: AkFENEGpdpqeichVqMhQVaq7Kfk=
+
+Name: res/drawable-normal-hdpi/number_a2_04.png
+SHA1-Digest: xNIpXi/0pAk7q2RTAkKniZwNt28=
+
+Name: res/drawable-normal-hdpi/number_a_03.png
+SHA1-Digest: 4zlSdjuw/OYXIj9GVzMDvgZj8Jk=
+
+Name: res/drawable-normal-land-hdpi/number_a2_09.png
+SHA1-Digest: T6GxxEjKfVb0FT8LGIaf9yF6VPE=
+
+Name: res/drawable-normal-land-hdpi/number_a_08.png
+SHA1-Digest: 93ss5mThv8Pei/XEATRlxytFnD4=
+
+Name: res/drawable-normal-hdpi/number_a_06.png
+SHA1-Digest: YUOX9A/fd6TMydKng4nEvAn1GQU=
+
+Name: res/drawable-normal-land-hdpi/week_fri.png
+SHA1-Digest: gAjle7ROhkzyyFv1F51+QQjStQQ=
+
+Name: res/drawable-normal-land-hdpi/number_a_09.png
+SHA1-Digest: JaUKeLCR1HLom9NgSg+I1ACXZ7A=
+
+Name: res/drawable-normal-land-hdpi/number_a2_03.png
+SHA1-Digest: 09elcwWf4eXxUDcXMGsPMLqbb4U=
+
+Name: res/drawable-normal-land-hdpi/number_a2_08.png
+SHA1-Digest: fcOrnogloskpueO503D/wKMEL/Q=
+
+Name: res/drawable-normal-hdpi/week_thur.png
+SHA1-Digest: Pm096F1pZIfLOAAmm4XWuf+dajY=
+
+Name: res/drawable-normal-land-hdpi/number_a_10.png
+SHA1-Digest: 1QzFBPxxxTpb1a4aZMMMsT7TdJY=
+
+Name: res/drawable-normal-hdpi/bg.png
+SHA1-Digest: lV+6HWl+t6HIctTGNu2jJ2k8HFU=
+
+Name: res/layout-land/widget.xml
+SHA1-Digest: VMjAOgV60BtMRs/gkpVYMQDoM0Y=
+
+Name: res/drawable-normal-hdpi/number_a2_06.png
+SHA1-Digest: AkFENEGpdpqeichVqMhQVaq7Kfk=
+
+Name: res/drawable-normal-hdpi/number_a2_03.png
+SHA1-Digest: 09elcwWf4eXxUDcXMGsPMLqbb4U=
+
+Name: res/drawable-normal-land-hdpi/number_a_05.png
+SHA1-Digest: nI1+R/YfushbMgZBUm1+37qBjEM=
+
+Name: res/drawable-normal-hdpi/line.9.png
+SHA1-Digest: gn4rA+rUde0wRbhtUUKxX/A4OG0=
+
+Name: resources.arsc
+SHA1-Digest: hhFnpvqRcbmnXejtcfohdPeM5bg=
+
+Name: res/drawable-normal-land-hdpi/number_a_04.png
+SHA1-Digest: VLtDepCqs4aq1n4NSmYFKP1ULhM=
+
+Name: res/layout/widget.xml
+SHA1-Digest: RQ+8IjwyVRPBdDF5jEYJcl+M4Yg=
+
+Name: res/drawable-normal-land-hdpi/week_tue.png
+SHA1-Digest: mlk64bAABCg58nR40S4ZN2P93Mw=
+
+Name: res/drawable-normal-hdpi/number_a_05.png
+SHA1-Digest: tIK0zPBXGuX3Pf/PAEnk2DPUy5E=
+
+Name: res/drawable-normal-land-hdpi/week_mon.png
+SHA1-Digest: 9e0Z7Cb7JLUsoGMu0hEDZOXyHJo=
+
+Name: AndroidManifest.xml
+SHA1-Digest: Jprb22ypUiT3h0W/dSqpf5fwQhs=
+
+Name: res/drawable-normal-land-hdpi/number_a2_10.png
+SHA1-Digest: a93AzhOvt7aTtcFeVWmZ1Sst24g=
+
+Name: res/drawable-normal-hdpi/number_a2_08.png
+SHA1-Digest: fcOrnogloskpueO503D/wKMEL/Q=
+
+Name: res/drawable-normal-land-hdpi/number_a_02.png
+SHA1-Digest: 368GW8jL23pXY1wk1WGUBOH98ao=
+
+Name: res/drawable-normal-hdpi/week_sat.png
+SHA1-Digest: PWzHjZqoY61jQGGnzsmWwhy+vmI=
+
+Name: res/drawable-normal-hdpi/number_a_07.png
+SHA1-Digest: Gs5/f9D0MoPXtJxfFF9oK5k8Oqk=
+
+Name: res/drawable-normal-land-hdpi/am.png
+SHA1-Digest: MLbgPYs1uqM/x+O51568VQsUhmg=
+
+Name: res/drawable-normal-hdpi/number_a2_07.png
+SHA1-Digest: kIL2kaPWOb8CFA+OfQPdQFtaunY=
+
+Name: res/drawable-normal-hdpi/number_a_01.png
+SHA1-Digest: T5nXl2HyJIWpZOe6f3TnltUg/c4=
+
+Name: res/drawable-normal-hdpi/number_a2_09.png
+SHA1-Digest: T6GxxEjKfVb0FT8LGIaf9yF6VPE=
+
+Name: res/drawable-normal-land-hdpi/bg.png
+SHA1-Digest: lV+6HWl+t6HIctTGNu2jJ2k8HFU=
+
+Name: res/drawable-normal-hdpi/number_a2_05.png
+SHA1-Digest: LRzpVSLFN3CgISfr0/8TccP3bfQ=
+
+Name: res/drawable-normal-land-hdpi/number_a_01.png
+SHA1-Digest: o5mGYqIJH5g+12FfnoilARZwkwo=
+
+Name: res/drawable-normal-hdpi/week_tue.png
+SHA1-Digest: mlk64bAABCg58nR40S4ZN2P93Mw=
+
+Name: classes.dex
+SHA1-Digest: 5FUsSX5flVRLSEHLkYqMB4JhQQQ=
+
+Name: res/drawable-normal-hdpi/week_sun.png
+SHA1-Digest: eRzpIz/L/Ei+J+CZVh9UMWy6Bv4=
+
+Name: res/drawable-normal-hdpi/number_a_02.png
+SHA1-Digest: R94A477rxnA2ix9z76XvvKFyJgY=
+
+Name: res/drawable-normal-hdpi/am.png
+SHA1-Digest: tMoR+k778OrCf2WfLgVhN43i0Mc=
+
+Name: res/drawable-normal-hdpi/number_a_00.png
+SHA1-Digest: 8+/wAQT1D9LcR26c7w/gLzRkiYE=
+
+Name: res/drawable-normal-hdpi/number_a_04.png
+SHA1-Digest: aJm8AToewD+9qqciGcThzj0qQPg=
+
+Name: res/drawable-normal-hdpi/number_a_10.png
+SHA1-Digest: 1QzFBPxxxTpb1a4aZMMMsT7TdJY=
+
+Name: res/drawable-normal-hdpi/number_a2_02.png
+SHA1-Digest: 8axjmBVbiQ4MdGdXblt014p8GtM=
+
+Name: res/drawable-normal-land-hdpi/week_wed.png
+SHA1-Digest: IYe+OcURLglZoGQo1v9hJknx9RU=
+

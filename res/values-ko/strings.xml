@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"디지털
+시계"</string>
+    <string name="dateformat">M월 d일</string>
+    <string name="dayformat">E요일</string>
+</resources>
